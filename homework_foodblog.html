@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Food Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <script src="http-vue-loader"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <aside id="leftside"></aside>
+    <aside id="rightside"></aside>
+    <div id="container">
+
+    <header><foodblog></foodblog>
+    </header>
+
+    <main>
+    
+    <aside id="photos">
+        <img src="images/chili.jpg" alt="White Chicken Chili" width="180">
+    </aside>
+
+    <comments></comments>
+    
+    
+    <section id="blogposts">
+      <div class="post">
+        <img v-bind:src="profile" alt="profile" class="profile rounded" v-on:click="showBox(0)">
+        <span class="author">{{ objs[0].author }}</span> — 
+        <span class="date">{{ objs[0].date }}</span>
+        <span class="reply">{{ reply }}</span>
+        <p>
+        {{ objs[0].paragraph }}
+        </p>
+    </div>
+
+    <div class="post">
+        <img v-bind:src="profile" alt="profile" class="profile rounded" v-on:click="showBox(1)">
+        <span class="author">{{ objs[1].author }}</span> — 
+        <span class="date">{{ objs[1].date }}</span>
+        <span class="reply">{{ reply }}</span>
+        <p>
+        {{ objs[1].paragraph }}
+        </p>
+    </div>
+
+    <div class="post">
+        <img v-bind:src="profile" alt="profile" class="profile rounded" v-on:click="showBox(2)">
+        <span class="author">{{ objs[2].author }}</span> — 
+        <span class="date">{{ objs[2].date }}</span>
+        <span class="reply">{{ reply }}</span>
+        <p>
+        {{ objs[2].paragraph }}
+        </p>
+    </div>
+
+    <div class="post">
+        <img v-bind:src="profile" alt="profile" class="profile rounded" v-on:click="showBox(3)">
+        <span class="author">{{ objs[3].author }}</span> — 
+        <span class="date">{{ objs[3].date }}</span>
+        <span class="reply">{{ reply }}</span>
+        <p>
+        {{ objs[3].paragraph }}
+        </p>
+    </div>  
+</section>
+
+    <div id="floatingBox">
+        <button onclick="modalOff()" class="modalOff btn btn-light">x</button>
+        <div id="texts" class="text-white"></div>
+        <button onclick="modalOff()" class="modalOff btn btn-light">close</button>
+    </div>
+</main>
+
+<footer>&copy; Copyright FOOD BLOG</footer>
+    
+</div>
+
+<script src="vue.js"></script>
+
+</body>
+</html>
